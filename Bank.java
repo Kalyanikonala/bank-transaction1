@@ -29,7 +29,7 @@ public class Bank implements Transaction {
             check.updateBalance(newBalance);
             System.out.println("Withdrawn: " + amount + " | Balance: " + newBalance);
         } else {
-            System.out.println("❌ Insufficient Balance!");
+            System.out.println("Insufficient Balance!");
         }
     }
 
@@ -41,7 +41,7 @@ public class Bank implements Transaction {
             check.updateBalance(newBalance);
             System.out.println("Payment of " + amount + " successful | Balance: " + newBalance);
         } else {
-            System.out.println("❌ Payment Failed! Insufficient Balance.");
+            System.out.println("Payment Failed! Insufficient Balance.");
         }
     }
 
@@ -54,7 +54,7 @@ public class Bank implements Transaction {
         int pin = sc.nextInt();
 
         if (!bank.check.validatePin(pin)) {
-            System.out.println("❌ Invalid PIN! Access Denied.");
+            System.out.println("Invalid PIN! Access Denied.");
             return;
         }
 
@@ -95,17 +95,18 @@ public class Bank implements Transaction {
                     System.out.println("Converted to Rupees: " + Currency.dollarsToRupees(dollars));
                     break;
                 case 6:
-                    System.out.println("💰 Current Balance: " + bank.check.getBalance());
+                    System.out.println("Current Balance: " + bank.check.getBalance());
                     break;
                 case 0:
-                    System.out.println("✅ Thank you for banking with us!");
+                    System.out.println("Thank you for banking with us!");
                     break;
                 default:
-                    System.out.println("❌ Invalid choice!");
+                    System.out.println("Invalid choice!");
             }
         } while (choice != 0);
 
         sc.close();
     }
 }
+
 
